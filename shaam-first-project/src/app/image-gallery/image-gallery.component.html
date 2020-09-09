@@ -1,0 +1,13 @@
+<div class="main">
+    <div class="big-image-container">
+        <img class="big-image" [src]="selectedImage">
+    </div>
+    <div class="images-container">
+        <div *ngFor="let src of allImages">
+            <img
+            [class.selected-image]="src === selectedImage"
+            [src]="src" class="image-item" (click)="setSelectedImage(src)">
+        </div>
+    </div>
+</div>
+    
