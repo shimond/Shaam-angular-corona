@@ -1,0 +1,13 @@
+<h1 [class.ok]="searchWord.length > 2">{{searchTitle}}</h1>
+<div>
+    <input #txt type="search" (input)="searchWord = txt.value" (blur)="doSearch()">
+    <!-- <button (click)="doSearch()">GO</button> -->
+    <span [hidden]="!isBusy">Searching....</span>
+</div>
+<div>
+    <!-- <ul>
+        <li *ngFor="let item of result">{{item}}</li>
+    </ul> -->
+
+    <div class="item" *ngFor="let item of result; let index=$index"> {{index}} - {{item}}</div>
+</div>
